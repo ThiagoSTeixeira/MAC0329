@@ -1,0 +1,19 @@
+Caio Fontes, Jonas Rodrigues, Thiago Teixeira
+
+Nosso circuito está separado em um circuito principal, main,a ULA em si, e outros 8 circuitos que utilizamos como ferramentas, que são: um somador de 1 bit, um somador de 8 bits,
+4 comparadores, cada um de 1,2,4 e 8 bits; um inversor e um selecionador .
+
+O circuito main, que contém a ULA, consiste num selecionador que escolhe entre uma operação de adição ou subtração;
+quando o "s" está selecionado como 0, a operação será de adição e quando está selecionado como "1" será de subtração.
+Neste circuito existe um somador, para realizar as operações selecionadas no selecionador (que resultará em R) e um comparador, que irá comparar
+A e B, se são: A < B, A = B ou A > B.
+
+Para montarmos o somador de 8 bits (Soma8bit), criamos um somador de apenas 1bit (Soma1bit), e usamos este como ferramenta combinando 8 deles, formando um somador de 8bits (Soma8bit).
+
+Já para o comparador (Comp8bit), fizemos um processo similar, porém ao invés de usar 8 comparadores de 1bit (Comp1Bit), optamos por montar antes um de 2 bits(Comp2bit), e com eles um de 4 bits (Comp4bit), 
+e assim finalmente o de 8 bits (Comp8bit).
+
+O inversor foi feito utilizando um somador de 8 bits. Ele consiste na negação dos bits de B mais a soma de um carry, para assim poder criar a versão negativa de 8 na forma complemento de 2.
+
+Enquanto para o Selecionador, usamos em sua montagem um Inversor, que criamos usando novamente o somador de 8 bits.
+
